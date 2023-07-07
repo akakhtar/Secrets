@@ -27,9 +27,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect(
-  "mongodb+srv://akakhtarsbg:4409atif@cluster0.szmlwck.mongodb.net/userDB?retryWrites=true&w=majority"
-);
+mongoose.connect(process.env.CONNECTION_LINK);
 
 const userSchema = new mongoose.Schema({
   email: String,
